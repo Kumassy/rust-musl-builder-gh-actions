@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build binary
-      run: docker run --rm -v `pwd`:/home/rust/src ekidd/rust-musl-builder cargo build --release
+      run: docker run --rm -u root -v `pwd`:/home/rust/src ekidd/rust-musl-builder cargo build --release
 
     - name: save artifacts
       uses: actions/upload-artifact@v2
